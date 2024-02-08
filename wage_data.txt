@@ -1,0 +1,26 @@
+{
+"Fairfield": "110358",
+"Hartford": "77340",
+"Litchfield": "83820",
+"Middlesex": "93170",
+"New Haven": "76813",
+"New London": "81857",
+"Tolland": "91242",
+"Windham": "69011"
+}
+
+{
+"Norfolk": "84916",
+"Middlesex": "82090",
+"Barnstable": "60526",
+"Plymouth": "75092",
+"Essex": "67311",
+"Dukes": "66288",
+"Suffolk": "53540",
+"Worcester": "65223",
+"Hampshire": "61227",
+"Berkshire": "48450",
+"Franklin": "53663",
+"Bristol": "55298",
+"Hampden": "49094"
+}
