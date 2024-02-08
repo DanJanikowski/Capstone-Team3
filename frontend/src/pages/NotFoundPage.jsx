@@ -8,7 +8,7 @@ export default function NotFoundPage() {
         <>
         
         <h1>Oh No!!! Something went wrong!!!</h1>
-        <Link to='/'>Home</Link>
+        <Link to='/home'>Home</Link>
         <br />
         <img src={img} style={{height: "500px"}}/>
         </>

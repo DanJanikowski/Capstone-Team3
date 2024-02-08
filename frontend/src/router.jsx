@@ -9,7 +9,8 @@ import NotFoundPage from './pages/NotFoundPage';
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <LoginPage />
+        element: <LoginPage />,
+        errorElement: <NotFoundPage />
             },
     {
         path: "/home",
@@ -28,8 +29,7 @@ const router = createBrowserRouter([
                 element: <LogoutPage />
             }
 
-        ],
-        errorElement: <NotFoundPage />
+        ]
     },
     
 ]);
