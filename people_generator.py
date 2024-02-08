@@ -114,8 +114,8 @@ def create_predictor_model(people_data_file, model_save_file):
     # print(model.score(X_test, y_test))
 
     with open(model_save_file, 'wb') as file:
-        pickle.dump(model, file)
+        pickle.dump((X.columns.to_list(), model), file)
 
 
-gen_people('people_data.json', 10000)
+# gen_people('people_data.json', 10000)
 create_predictor_model('people_data.json', 'salary_predictor.pkl')
