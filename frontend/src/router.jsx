@@ -8,11 +8,11 @@ import NotFoundPage from './pages/NotFoundPage';
 
 const router = createBrowserRouter([
     {
-        path: "/login/",
+        path: "/",
         element: <LoginPage />
             },
     {
-        path: "/",
+        path: "/home",
         element: <App />,
         children: [
             {
@@ -20,11 +20,11 @@ const router = createBrowserRouter([
                 element: <HomePage />
             },
             {
-                path: "/search/",
+                path: "search",
                 element: <SearchPage />
             },
             {
-                path:"/logout/",
+                path:"logout",
                 element: <LogoutPage />
             }
 

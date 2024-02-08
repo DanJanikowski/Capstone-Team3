@@ -14,7 +14,7 @@ export default function LoginPage() {
     const handleLogin = () => {
         // if (email && password) {
         // }
-        navigate('/')
+        navigate('/home')
         
     }
 
