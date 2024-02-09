@@ -1,12 +1,7 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-const handleLogin = () => {
-    // if (email && password) {
-    // }
-    navigate('/')
-    
-}
+import '../App.css'
 
 export default function LoginPage() {
     const navigate = useNavigate()
@@ -24,8 +19,9 @@ export default function LoginPage() {
         <div className='login-box'> 
             <form className='login-form' onSubmit={e => [e.preventDefault(), handleLogin()]}>
                 <div className='login-header'>
-                    <header className='header'>Login</header>
+                    <header className='header'><h1>Login</h1></header>
                 </div>
+                
 
                 <div className='login-input'>
                     <input className='input' placeholder="Username" />
@@ -34,11 +30,12 @@ export default function LoginPage() {
                 <div className='login-input'>
                     <input className='input' type="password" placeholder="Password" />
                 </div>
-
+        
                 <div className='login-input'>
                     <input className='login-submit' type="submit" value='Login'/>    
                 </div>    
-
+                <br />
+                <br />
                 <div className='login-memeber'>
                     <div>
                         <label style={{paddingLeft:'30px', fontWeight:'bold'}}>Not a member yet?</label>

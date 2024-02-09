@@ -24,13 +24,12 @@ const router = createBrowserRouter([
                 path: "search",
                 element: <SearchPage />
             },
-            {
-                path:"logout",
-                element: <LogoutPage />
-            }
-
         ]
     },
+    {
+        path:"/home/logout",
+        element: <LogoutPage />
+    }
     
 ]);
 
