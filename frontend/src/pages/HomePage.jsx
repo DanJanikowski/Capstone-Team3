@@ -9,7 +9,6 @@ export default function HomePage() {
 
     return (
         <>
-            <NavBar />
             <h1>This is HomePage</h1>
         </>
     )

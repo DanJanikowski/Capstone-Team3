@@ -58,7 +58,6 @@ export default function SalaryCalculator() {
 
   return (
     <>
-      <NavBar />
       <form onSubmit={handleSubmit}>
         <label>
           Select a county:
@@ -86,7 +85,7 @@ export default function SalaryCalculator() {
         <br />
         <button type="submit">Submit</button>
       </form>
-      <h2>Expected salary: ${predictedSalary}</h2>
+      <h2>Expected salary: ${predictedSalary.toLocaleString()}</h2>
     </>
 
   );
