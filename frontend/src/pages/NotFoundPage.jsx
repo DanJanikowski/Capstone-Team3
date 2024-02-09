@@ -1,16 +1,19 @@
 import { Link } from "react-router-dom"
-import img from '../img/notfound.jpg'
+import img from '../img/404.webp'
+import '../App.css'
 
 export default function NotFoundPage() {
 
 
     return (
-        <>
-        
-        <h1>Oh No!!! Something went wrong!!!</h1>
+        <div className="not-found-container">
+        <img src={img}  alt="404 Not Found" />
+        <h1 className="heading">Oh No!!! Something went wrong!!!</h1>
         <Link to='/home'>Home</Link>
         <br />
-        <img src={img} style={{height: "500px"}}/>
-        </>
+        
+        </div>
     )
 }
+
+

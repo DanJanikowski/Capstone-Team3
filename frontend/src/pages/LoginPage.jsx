@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import { useState } from 'react'
+import { useState} from 'react'
 import axios from 'axios'
-
 import '../App.css'
+
+
 
 export default function LoginPage() {
     const [firstName, setFirstName] = useState('');
@@ -16,9 +17,7 @@ export default function LoginPage() {
             'first_name': firstName,
             'last_name': lastName
         })
-        console.log(response);
-        loggedInPerson = response[0];
-        allPeople = response.slice(1, 10000);
+        console.log(response.data[1000]);
         // Set these to global
         navigate('/home')
     }

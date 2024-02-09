@@ -5,6 +5,8 @@ import LoginPage from './pages/LoginPage';
 import SearchPage from './pages/SearchPage';
 import LogoutPage from './pages/LogoutPage';
 import NotFoundPage from './pages/NotFoundPage';
+import SalaryColculator from './pages/SalaryColculator';
+
 
 const router = createBrowserRouter([
     {
@@ -24,6 +26,10 @@ const router = createBrowserRouter([
                 path: "search",
                 element: <SearchPage />
             },
+            {
+                path:'salary',
+                element: <SalaryColculator />
+            }
         ]
     },
     {

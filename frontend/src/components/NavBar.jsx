@@ -9,9 +9,11 @@ function NavBar() {
   return (
     <Navbar expand="lg" className='Narbar' style={{fontWeight:"bold", backgroundColor:'lightblue', fontSize:"30px"}} >
       <Container className='container-fluid'>
-        {/* <Navbar.Brand className='nav-item' href="/home">HR Wizard</Navbar.Brand> */}
-        <Image src="src/img/hr.png" roundedCircle style={{height:"100px", width:"220px"}} />
-
+         <Navbar.Brand className='nav-item' href="/home" >
+          {/* <Image src="src/img/hr.png" roundedCircle style={{height:"100px", width:"220px"}} /> */}
+          HR Wizard
+        </Navbar.Brand>
+        
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto "style={{ display:"flex", justifyContent:"space-between", width:"600px"}}>
@@ -21,6 +23,10 @@ function NavBar() {
 
             <Nav className="mx-auto"  >
               <Nav.Link  className='nav-item' href="/home/search">Search</Nav.Link>
+            </Nav>
+
+            <Nav className="mx-auto"  >
+              <Nav.Link  className='nav-item' href="/home/salary">SalaryCalculator</Nav.Link>
             </Nav>
           </Nav>
 
