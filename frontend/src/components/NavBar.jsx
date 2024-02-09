@@ -20,23 +20,21 @@ function NavBar({ user }) {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mx-auto " style={{ display: "flex", justifyContent: "space-between", width: "600px" }}>
             <Nav className="mx-auto " >
-              <Nav.Link className='nav-item ' href="/home">Home</Nav.Link>
+              <Link className='nav-item ' to="/home">Home</Link>
             </Nav>
 
             <Nav className="mx-auto"  >
-              <Nav.Link className='nav-item' href="/search">Search</Nav.Link>
+              <Link className='nav-item' to="/search">Search</Link>
             </Nav>
 
             <Nav className="mx-auto"  >
               <Link className='nav-item' to="/salary">SalaryCalculator</Link>
             </Nav>
-          </Nav>
 
-          <Nav className="ml-auto ">
-            <NavDropdown className='nav-item' title="User" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/">Login</NavDropdown.Item>
-              <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
-            </NavDropdown>
+            {user &&
+              <Nav className="mx-auto"  >
+                <Link className='nav-item' to="/">Logout</Link>
+              </Nav>}
           </Nav>
 
 

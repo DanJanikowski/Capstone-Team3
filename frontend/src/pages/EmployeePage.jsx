@@ -1,5 +1,9 @@
-export default function EmployeePage() {
+export default function EmployeePage({ user }) {
     return (
-        <h1>This is the SearchPage</h1>
+        <div>
+            <img>
+            </img>
+            <h1>{user.first_name} {user.last_name}</h1>
+        </div>
     )
 }
