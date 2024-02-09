@@ -23,15 +23,17 @@ app.all("*", (req, res, next) => {
 });
 
 //Serve all the people at GET /people
-app.post("/home", async (req, res) => {
+app.post("/api/login", async (req, res) => {
   try {
     const login_data = req.body;
     console.log(login_data);
     let first_name = login_data.first_name;
     let last_name = login_data.last_name;
-    const data = await collection.findOne({'first_name': first_name, 'last_name': last_name});
-    if (data) {
-        res.json(data);
+    const all_people = await collection.find().toArray();
+    const login_info = await collection.findOne({'first_name': first_name, 'last_name': last_name});
+    let return_data = [login_info, ...(all_people)];
+    if (login_info) {
+        res.json(return_data);
     } else {
         res.status(401).json({ 'Error': 'Invalid Login' });
     }
@@ -39,6 +41,8 @@ app.post("/home", async (req, res) => {
     res.status(500).json({ error: error });
   }
 });
+
+// app.get("/employee/:i")
 
 
 app.use("", express.static("frontend/src/index.html"));
