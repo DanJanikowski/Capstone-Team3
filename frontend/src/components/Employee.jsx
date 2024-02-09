@@ -1,5 +1,11 @@
-export default function Employee() {
+import { Link } from "react-router-dom";
+
+export default function Employee({person}) {
     return (
-        <h1>This is the SearchPage</h1>
+        <div>
+            <Link to={'{}'}>Name: {person.first_name} {person.last_name} || Role: {person.role}</Link>
+
+        </div>
+
     )
 }

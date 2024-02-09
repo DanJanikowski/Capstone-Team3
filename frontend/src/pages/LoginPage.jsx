@@ -6,7 +6,7 @@ import '../App.css'
 
 
 
-export default function LoginPage({ setUser }) {
+export default function LoginPage({ setUser, setPeople }) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const navigate = useNavigate()
@@ -18,6 +18,7 @@ export default function LoginPage({ setUser }) {
             'last_name': lastName
         })
         setUser(response.data[0]);
+        setPeople(response.data.slice(1))
         console.log(response.data[0]);
         // Set these to global
         navigate('/home')

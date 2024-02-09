@@ -12,13 +12,14 @@ import { useState } from 'react'
 
 function App() {
   const [user, setUser] = useState();
+  const [people, setPeople] = useState();
 
   return (
     <>
       {user && <NavBar user={user} />}
       <Routes>
-        <Route path="/" element={<LoginPage setUser={setUser} />} />
-        <Route path="/home" element={<HomePage user={user} />} />
+        <Route path="/" element={<LoginPage setUser={setUser} setPeople={setPeople}/>} />
+        <Route path="/home" element={<HomePage user={user} people={people}/>} />
         <Route path="/search" element={<SearchPage />} />
         <Route path="/salary" element={<SalaryCalculator />} />
         <Route path="/logout" element={<LogoutPage />} />
