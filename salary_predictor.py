@@ -3,15 +3,36 @@ import pickle
 
 import pandas as pd
 from sklearn.linear_model import LinearRegression
+from flask import Flask, request, jsonify
 
+app = Flask(__name__)
 
-def predict_salary(args):
+@app.route('/api/predict', methods=['POST'])
+def predict_salary():
     params, model = pickle.load(open('salary_predictor.pkl', 'rb'))
-    print(params)
 
+    data = request.get_json()
+    county = data['county']
+    role = data['role']
 
-# test_X = pd.get_dummies(test_data_in[['homeworld', 'unit_type']])
+    if 'county_' + county not in params:
+        return jsonify({'Error': 'Invalid County'})
+    
+    if 'role_' + role not in params:
+        return jsonify({'Error': 'Invalid Role'})
 
-# predictions = pickled_model.predict(test_X)
-# test_data_in['Predictions'] = predictions
-# print(test_data_in)
+    input = {}
+    for i in params:
+        if role in i or county in i:
+            input[i] = 1
+        else:
+            input[i] = 0
+    
+    input_df = pd.DataFrame({}, columns=params)
+    input_df = input_df.append(input, ignore_index=True)
+    
+    pred_salary = model.predict(input_df)
+    return jsonify({'predicted_salary': int(pred_salary)})
+
+if __name__ == '__main__':
+    app.run(debug=True)

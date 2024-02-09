@@ -16,9 +16,9 @@ export default function LoginPage() {
             'first_name': firstName,
             'last_name': lastName
         })
-        console.log(response);
-        loggedInPerson = response[0];
-        allPeople = response.slice(1, 10000);
+        console.log(response.data);
+        let loggedInPerson = response.data[0];
+        let allPeople = response.data.slice(1, 10000);
         // Set these to global
         navigate('/home')
     }
