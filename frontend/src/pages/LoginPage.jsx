@@ -9,18 +9,15 @@ import '../App.css'
 export default function LoginPage({ setUser, setPeople }) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleLogin = async () => {
-
-        let response = await axios.post('/api/login', {
+        let response = await axios.post('/api/getlogin', {
             'first_name': firstName,
             'last_name': lastName
         })
-        setUser(response.data[0]);
-        setPeople(response.data.slice(1))
-        console.log(response.data[0]);
-        // Set these to global
+        setUser(response.data);
+
         navigate('/home')
     }
 
@@ -45,14 +42,12 @@ export default function LoginPage({ setUser, setPeople }) {
                     <div className='login-input'>
                         <input className='login-submit' type="submit" value='Login' />
                     </div>
-                    <br />
-                    <br />
                     <div className='login-memeber'>
                         <div>
-                            <label style={{ paddingLeft: '30px', fontWeight: 'bold' }}>Not a member yet?</label>
+                            <label style={{ fontWeight: 'bold' }}>Not a member yet?</label>
                         </div>
                         <div>
-                            <label style={{ paddingRight: '50px' }}>Sign Up</label>
+                            <label>Sign Up</label>
                         </div>
                     </div>
                 </form>

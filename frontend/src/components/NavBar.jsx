@@ -1,47 +1,39 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Image from 'react-bootstrap/Image';
-import "../App.css"
-import { Link } from 'react-router-dom';
+import NavButton from "./NavButton"
+import { useNavigate, Link } from "react-router-dom";
+import './NavBar.css'
 
-function NavBar({ user }) {
+export default function NavBar({ user, setUser, setCurEmployee }) {
+  const navigate = useNavigate()
+  const basicNav = (url) => {
+    navigate(url);
+  }
+
+  const customNav1 = (url) => {
+    setUser(null);
+    navigate(url);
+  }
+
+  const customNav2 = (url) => {
+    setCurEmployee(user);
+    navigate(url);
+  }
+
   return (
-    <Navbar expand="lg" className='Narbar' style={{ fontWeight: "bold", backgroundColor: 'lightblue', fontSize: "30px" }} >
-      <Container className='container-fluid'>
-        <Navbar.Brand className='nav-item' href="/home" >
-          {/* <Image src="src/img/hr.png" roundedCircle style={{height:"100px", width:"220px"}} /> */}
-          HR Wizard
-        </Navbar.Brand>
-
-        {user ? <p>Hi, {user.first_name}</p> : <Link to="/">Login</Link>}
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto " style={{ display: "flex", justifyContent: "space-between", width: "600px" }}>
-            <Nav className="mx-auto " >
-              <Link className='nav-item ' to="/home">Home</Link>
-            </Nav>
-
-            <Nav className="mx-auto"  >
-              <Link className='nav-item' to="/search">Search</Link>
-            </Nav>
-
-            <Nav className="mx-auto"  >
-              <Link className='nav-item' to="/salary">SalaryCalculator</Link>
-            </Nav>
-
-            {user &&
-              <Nav className="mx-auto"  >
-                <Link className='nav-item' to="/">Logout</Link>
-              </Nav>}
-          </Nav>
-
-
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-  );
+    <>
+      <div className='navbar-style'>
+        <div className="title-stuff">
+          <h1>HR Wizards</h1>
+          {/* {user &&
+            <h2>Hi, <Link className='user-link' to={`/employee/${user.id}`}>{user.first_name}</Link></h2>} */}
+          {user && <NavButton action={customNav2} url='/employee/${user.id}' text={user.first_name} />}
+        </div>
+        <div className="middle-stuff">
+          <NavButton action={basicNav} url='/home' text='Home' />
+          <NavButton action={basicNav} url='/salary' text='Salary' />
+          <NavButton action={customNav1} url='/' text='Logout' />
+        </div>
+        <div></div>
+      </div>
+    </>
+  )
 }
-
-export default NavBar;
