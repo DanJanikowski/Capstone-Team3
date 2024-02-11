@@ -1,0 +1,94 @@
+
+.salary-page {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    margin: 1em;
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    padding: 20px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: 0.5s;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-evenly;
+}
+
+.salary-form {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    
+}
+
+.salary-form label {
+    margin: 0 20px;
+    font-size: 22px;
+}
+
+.salary-form select {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+    padding: 8px;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.salary-form select option:last-child {
+    margin-top: 20px;
+}
+
+.salary-form button {
+    text-decoration: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 23px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    border-radius: 30px;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+
+.salary-result {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: black;
+    margin: 1em;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: 0.5s;
+    width: 70%;
+}
+
+.salary-result h2 {
+    font-size: 24px; 
+    width: 100%
+}
+
+
+.salary-page form {
+    @extend .salary-form;
+}
+
+.salary-page button {
+    @extend .salary-form button;
+}
+
+.salary-page h2 {
+    @extend .salary-result h2;
+}

@@ -1,13 +1,15 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import './EmployeePage.css'
+import img from '../components/profile_pic.jpg'
 
 export default function EmployeePage({ employee }) {
   return (
     <>
-      {employee && <section>
+      {employee && <section className='employee-page'>
         <div>
-          <img>
+          <img src={img}>
           </img>
           <h1>{employee.first_name} {employee.last_name}</h1>
         </div>

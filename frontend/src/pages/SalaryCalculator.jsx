@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios'
 import NavBar from '../components/NavBar'
+import './SalaryCalculator.css'
 
 export default function SalaryCalculator() {
   // State to manage the selected value of the dropdown
@@ -57,8 +58,8 @@ export default function SalaryCalculator() {
 
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
+    <div className='salary-page'>
+      <form className='salary-form' onSubmit={handleSubmit}>
         <label>
           Select a county:
           <select value={selectedCounty} onChange={handleDropdownChange1}>
@@ -85,8 +86,11 @@ export default function SalaryCalculator() {
         <br />
         <button type="submit">Submit</button>
       </form>
-      <h2>Expected salary: ${predictedSalary.toLocaleString()}</h2>
-    </>
+      <div className='salary-result'>
+        <h2>Expected salary: ${predictedSalary.toLocaleString()}</h2>
+      </div>
+      
+    </div>
 
   );
 };
