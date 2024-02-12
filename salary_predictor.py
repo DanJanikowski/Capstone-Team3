@@ -29,7 +29,8 @@ def predict_salary():
             input[i] = 0
     
     input_df = pd.DataFrame({}, columns=params)
-    input_df = input_df.append(input, ignore_index=True)
+    # input_df = input_df.append(input, ignore_index=True)
+    input_df = pd.concat([input_df, pd.DataFrame([input])], ignore_index=True)
     
     pred_salary = model.predict(input_df)
     return jsonify({'predicted_salary': int(pred_salary)})

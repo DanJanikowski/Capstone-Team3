@@ -25,7 +25,7 @@ export default function NavBar({ user, setUser, setCurEmployee }) {
           <h1>HR Wizards</h1>
           {/* {user &&
             <h2>Hi, <Link className='user-link' to={`/employee/${user.id}`}>{user.first_name}</Link></h2>} */}
-          {user && <NavButton action={customNav2} url='/employee/${user.id}' text={user.first_name} />}
+          {user && <h2><NavButton action={customNav2} url='/employee/${user.id}' text={user.first_name} /></h2>}
         </div>
         <div className="middle-stuff">
           <NavButton action={basicNav} url='/home' text='Home' />

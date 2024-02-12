@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
-import img from './profile_pic.jpg'
+import pic from './profile_pic.jpg'
 
 export default function Employee({ person, setCurEmployee }) {
   const navigate = useNavigate();
@@ -11,10 +11,10 @@ export default function Employee({ person, setCurEmployee }) {
   };
 
   return (
-    <div className="employee-button"  onClick={navToEmployee}>
-      <img src={img} style={{height:'35px'}}/>
-      <p>{person.first_name} {person.last_name}</p>
-      <p>Role: {person.role === 'basic' ? 'Developer' : person.role}</p>
+    <div className="employee-button" onClick={navToEmployee}>
+      <img src={pic} />
+      <p className="employee-btn-txt">{person.first_name} {person.last_name}</p>
+      <p className="employee-btn-txt">Role: {person.role === 'basic' ? 'Developer' : person.role}</p>
     </div>
   )
 }

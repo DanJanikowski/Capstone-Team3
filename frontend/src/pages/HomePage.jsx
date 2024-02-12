@@ -42,7 +42,7 @@ export default function HomePage({ user, setCurEmployee }) {
   };
 
   useEffect(() => {
-    fetchPeople().then((_people) => setPeople(_people));
+    fetchPeople(pageIndex).then((_people) => setPeople(_people));
   }, [])
 
   return (
