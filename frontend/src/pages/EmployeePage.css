@@ -19,16 +19,30 @@
     padding-bottom: 40px;
 }
 
-.employee-page img {
+/* .employee-page img {
     width: 150px; 
     height: 150px; 
-    border-radius: 50%;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 
 .employee-page h1 {
+    font-weight: bold;
     font-size: 24px; 
     margin-bottom: 5px;
+} */
+
+.pic-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    & img {
+        margin-left: 40px;
+        width: 200px; 
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
 }
 
 .employee-page p {

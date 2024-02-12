@@ -54,6 +54,7 @@
     & img {
         border-radius: 50%;
         width: 100px;
+        outline-style: inset;
     }
 }
 .employee-btn-txt {

@@ -117,6 +117,18 @@ app.post("/api/search_request", async (req, res) => {
 });
 
 
+// Get all the employees who have this guy/girl as a manager
+// Use the managers id to make a query for all employees with the same manager_id
+app.get("/api/sub_request/:id", async (req, res) => {
+  try {
+    const subs = await collection.find({ manager_id: parseInt(req.params['id']) }).toArray();
+    res.json(subs);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
+
+
 
 app.use("", express.static("frontend/src/index.html"));
 app.use("/index.html", express.static("frontend/src/index.html"));

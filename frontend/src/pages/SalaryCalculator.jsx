@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios'
-import NavBar from '../components/NavBar'
 import './SalaryCalculator.css'
 
 export default function SalaryCalculator() {
@@ -48,6 +47,9 @@ export default function SalaryCalculator() {
   // Event handler for form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    if (!selectedCounty || selectedCounty === 'None' || !selectedRole || selectedRole === 'None') return;
+
     let response = await axios.post('/api/predict', {
       'county': selectedCounty,
       'role': selectedRole.toLowerCase()
@@ -86,9 +88,7 @@ export default function SalaryCalculator() {
         <br />
         <button type="submit">Submit</button>
       </form>
-      <div className='salary-result'>
-        <h2>Expected salary: ${predictedSalary.toLocaleString()}</h2>
-      </div>
+      <h2 className='salary-result'>Expected salary: ${predictedSalary.toLocaleString()}</h2>
       
     </div>
 

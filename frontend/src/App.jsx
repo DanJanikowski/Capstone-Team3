@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<LoginPage setUser={setUser} />} />
           <Route path="/home" element={<HomePage user={user} setCurEmployee={setCurEmployee} />} />
           <Route path="/salary" element={<SalaryCalculator />} />
-          <Route path="/employee/:id" element={<EmployeePage employee={curEmployee} />} />
+          <Route path="/employee/:id" element={<EmployeePage employee={curEmployee} setCurEmployee={setCurEmployee} />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <footer className='page-footer'>

@@ -15,7 +15,8 @@
 .login-box {
   height: 650px;
   background-image: url("./img/giphy.gif");
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   /* background-attachment: fixed; */
   text-align: center;
