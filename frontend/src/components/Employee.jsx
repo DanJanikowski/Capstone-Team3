@@ -10,11 +10,22 @@ export default function Employee({ person, setCurEmployee }) {
     navigate(`/employee/${person.id}`);
   };
 
+  const roleDisplay = (role) => {
+    switch (role) {
+      case 'basic':
+        return 'Developer';
+      case 'hr':
+        return 'Human Resources';
+      case 'manager':
+        return 'Manager';
+    }
+  }
+
   return (
     <div className="employee-button" onClick={navToEmployee}>
       <img src={pic} />
       <p className="employee-btn-txt">{person.first_name} {person.last_name}</p>
-      <p className="employee-btn-txt">Role: {person.role === 'basic' ? 'Developer' : person.role}</p>
+      <p className="employee-btn-txt">Role: {roleDisplay(person.role)}</p>
     </div>
   )
 }
